@@ -1,12 +1,10 @@
 package com.flaminius.advent2022
 
-
-const val fileName = "src/main/resources/day1_input.txt"
-
 fun main() {
+    val fileName = "src/main/resources/day1_input.txt"
     val input: String = Resources.resourceAsText(fileName)
     println("result 1: ${Day01(input).getPart1Solution()}")
-    println("result 1: ${Day01(input).getPart2Solution()}")
+    println("result 2: ${Day01(input).getPart2Solution()}")
 }
 
 

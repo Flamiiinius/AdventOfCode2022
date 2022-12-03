@@ -1,10 +1,9 @@
 package com.flaminius.advent2022
 
 fun main() {
-    val fileName = "src/main/resources/day1_input.txt"
-    val input: String = Resources.resourceAsText(fileName)
-    println("result 1: ${Day01(input).getPart1Solution()}")
-    println("result 2: ${Day01(input).getPart2Solution()}")
+    val input: String = Resources.resourceAsText("src/main/resources/day1_input.txt")
+    println("result 1: ${Day01(input).solve1()}")
+    println("result 2: ${Day01(input).solve2()}")
 }
 
 
@@ -15,7 +14,7 @@ class Day01(private val input: String) {
         .map { it.lines().sumOf(String::toInt) } // counting each elf calories
         .sortedDescending() // sorting - more calories on top
 
-    fun getPart1Solution() = getOrderedMap().first()
+    fun solve1() = getOrderedMap().first()
 
-    fun getPart2Solution() = getOrderedMap().take(3).sum() // take the 1st 3 results and sum them
+    fun solve2() = getOrderedMap().take(3).sum() // take the 1st 3 results and sum them
 }

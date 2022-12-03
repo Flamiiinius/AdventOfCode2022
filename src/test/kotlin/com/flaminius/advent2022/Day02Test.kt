@@ -17,7 +17,7 @@ internal class Day02Test {
     @DisplayName("Day2 - Part 1: Example")
     fun solvePart1Example() {
         val input = example.split("\n")
-        val result = Day02(input).getPart1Solution()
+        val result = Day02(input).solve1()
         println("Result: $result")
         assertEquals(15, result)
     }
@@ -26,7 +26,7 @@ internal class Day02Test {
     @DisplayName("Day2 - Part 1: Result")
     fun solvePart1Input() {
         val input: List<String> = Resources.resourceAsListOfString("src/main/resources/day2_input.txt")
-        val result = Day02(input).getPart1Solution()
+        val result = Day02(input).solve1()
         println("Result: $result")
         assertEquals(10_310, result)
     }
@@ -35,7 +35,7 @@ internal class Day02Test {
     @DisplayName("Day2 - Part 2: Example")
     fun solvePart2Example() {
         val input = example.split("\n")
-        val result = Day02(input).getPart2Solution()
+        val result = Day02(input).solve2()
         println("Result: $result")
         assertEquals(12, result)
     }
@@ -44,7 +44,7 @@ internal class Day02Test {
     @DisplayName("Day2 - Part 2: Result")
     fun solvePart2Input() {
         val input: List<String> = Resources.resourceAsListOfString("src/main/resources/day2_input.txt")
-        val result = Day02(input).getPart2Solution()
+        val result = Day02(input).solve2()
         println("Result: $result")
         assertEquals(14_859, result)
     }

@@ -1,10 +1,9 @@
 package com.flaminius.advent2022
 
 fun main() {
-    val fileName = "src/main/resources/day2_input.txt"
-    val input: List<String> = Resources.resourceAsListOfString(fileName)
-    println("result 1: ${Day02(input).getPart1Solution()}")
-    println("result 2: ${Day02(input).getPart2Solution()}")
+    val input: List<String> = Resources.resourceAsListOfString("src/main/resources/day2_input.txt")
+    println("result 1: ${Day02(input).solve1()}")
+    println("result 2: ${Day02(input).solve2()}")
 }
 
 
@@ -37,7 +36,7 @@ class Day02(private val input: List<String>) {
         "C Z" to "C X" // Scissors(them) -> I need to Win -> Play Rock
     )
 
-    fun getPart1Solution() = input.sumOf { line -> calculateFinalResult[line]!! }
+    fun solve1() = input.sumOf { line -> calculateFinalResult[line]!! }
 
-    fun getPart2Solution() = input.sumOf { line -> calculateFinalResult[getExpectedPlay[line]!!]!! }
+    fun solve2() = input.sumOf { line -> calculateFinalResult[getExpectedPlay[line]!!]!! }
 }

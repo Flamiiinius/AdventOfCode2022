@@ -61,6 +61,7 @@ class Day09(val input: List<String>) {
         for (i in knotsPos.indices) {
             knotsUniquePath[i].add(knotsPos[i])
         }
+
         // execute input
         headMoves.map {
             //R 4 -> direction = R  moves = 4
@@ -87,11 +88,11 @@ class Day09(val input: List<String>) {
 
     private fun moveNextKnot(previousKnot: Coordinates, currentKnotIdx: Int) {
         val currentKnot: Coordinates = knotsPos[currentKnotIdx]
-        if (currentKnot.shouldMove(previousKnot)) {
-            currentKnot.moveCloseTo(previousKnot)
-            knotsPos[currentKnotIdx] = currentKnot.copy()
-            knotsUniquePath[currentKnotIdx].add(currentKnot.copy())
-            if (currentKnotIdx != knotsPos.size - 1) moveNextKnot(currentKnot, currentKnotIdx + 1)
+        if (currentKnot.shouldMove(previousKnot)) {  // returns a boolean
+            currentKnot.moveCloseTo(previousKnot) // changes currentKnot values
+            knotsPos[currentKnotIdx] = currentKnot.copy() // updating knot position
+            knotsUniquePath[currentKnotIdx].add(currentKnot.copy()) // adding knot to path set
+            if (currentKnotIdx != knotsPos.size - 1) moveNextKnot(currentKnot, currentKnotIdx + 1) // iterate over all knots
         }
     }
 }
